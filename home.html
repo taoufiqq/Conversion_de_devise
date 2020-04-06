@@ -1,22 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Conversion de devise</title>
+    <title>Conversion de devise</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-     <div>
-     	<div>
-     	<label>Entrez un pays ou une devise</label><br>
-     	<input type="text"><br>
-        <label>merci d'entrez un montant</label><br>
-     	<input type="text">
-        </div>
-        <div>
-     	<label>Entrez un pays ou une devise</label><br>
-        <input type="text"><br>
-     	<label>merci d'entrez un montant</label><br>
-     	<input type="text">
-     	</div>
-</div>
+    <h1>Currency Converter</h1>
+       <br><br>
+       <form name="converter">
+           <fieldset>
+               <label>PAK Currency</label>
+               <input type="number" name="rupees" required>
+               <input type="button" value="Convert" onclick="currencyConverter(converter.rupees.value)"><br><br>
+                <label>MAD(Morroco)</label>
+               <input id="mad"><br><br>
+
+               <label>Dollar(American)</label>
+               <input id="dollar"><br><br>
+
+               <label>Yuan(Chine)</label>
+               <input id="yuan"><br><br>
+
+               <label>Won(Korea)</label>
+               <input id="won"><br><br>
+
+               <label>Riyal(Saudia)</label>
+               <input id="riyal"><br><br>
+
+               <label>Dinar(Kuwait)</label>
+               <input id="dinar"><br><br>
+
+               <input type="reset" value="Reset Form">
+
+
+           </fieldset>
+       </form>
+       <script>
+           function currencyConverter(valNum){
+               if(converter.rupees.value <= 0)
+               window.alert("entrer Value Greaterthan");
+               else{
+                   document.getElementById("mad").value = (valNum*10.27).toFixed(2);
+                   document.getElementById("dollar").value = (valNum/158.93).toFixed(2);
+                   document.getElementById("yuan").value = (valNum/23.12).toFixed(2);
+                   document.getElementById("won").value = (valNum/0.14).toFixed(2);
+                   document.getElementById("riyal").value = (valNum/42.37).toFixed(2);
+                   document.getElementById("dinar").value = (valNum/522.21).toFixed(2);
+               }
+           }
+       </script>
+
 </body>
 </html>
